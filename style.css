@@ -1,0 +1,172 @@
+/* RESET & VARS */
+:root {
+    --bg-color: #0d0d0d;       /* Deep Ink Black */
+    --text-color: #e0e0e0;     /* Rice Paper White */
+    --accent-color: #cf352e;   /* Seal Red (Traditional Signature Color) */
+    --code-color: #a0a0a0;     /* Grey for terminal text */
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono); /* Default to code font */
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 4rem;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+
+.ink-title {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--code-color);
+    margin-bottom: 2rem;
+}
+
+.accent {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* TERMINAL EFFECT */
+.terminal-box {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.code-line {
+    display: block;
+    color: var(--code-color);
+    margin-bottom: 0.5rem;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+    color: var(--accent-color);
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* SEPARATOR (The Brush Stroke) */
+.ink-brush {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--code-color), transparent);
+    margin: 4rem 0;
+    opacity: 0.3;
+}
+
+/* SECTIONS */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color); /* Red number/title */
+    font-family: var(--font-mono);
+}
+
+.narrative p {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+}
+
+.narrative strong {
+    color: #fff;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* PROJECTS */
+.project-card {
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    border-left: 1px solid #333;
+    transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+    border-left: 1px solid var(--accent-color);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--code-color);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 6rem;
+    font-size: 0.9rem;
+    color: var(--code-color);
+    padding-bottom: 2rem;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--code-color);
+}
+
+/* PROFILE PICTURE */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    
+    /* THE SUMI-E EFFECT */
+    filter: grayscale(100%) contrast(120%); /* Black & white + High contrast */
+    border: 2px solid var(--code-color);
+    transition: all 0.5s ease;
+}
+
+/* Add color back when you hover over it */
+.profile-pic:hover {
+    filter: grayscale(0%);
+    border-color: var(--accent-color);
+    transform: scale(1.05); /* Slight zoom */
+}
